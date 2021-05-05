@@ -19,18 +19,11 @@ public class actionsDemo {
 		
 		Actions a = new Actions(driver);
 		WebElement move = driver.findElement(By.cssSelector("a[id='nav-link-accountList']"));
-		
-		
 		a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
 		
 		
 		//Help of Context Click we can right click
-		a.moveToElement(move).contextClick().build().perform();
-		
-		
-		
-		
-		
+		a.moveToElement(move).contextClick().build().perform();		
 	}
 
 }
