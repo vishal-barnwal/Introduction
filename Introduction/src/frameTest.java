@@ -13,6 +13,8 @@ public class frameTest {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("https://jqueryui.com/droppable/");
+		//to know how many frame a webpage has
+		System.out.println(driver.findElements(By.tagName("iframe")).size());
 		
 		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
 		driver.findElement(By.id("draggable")).click();
@@ -22,6 +24,11 @@ public class frameTest {
 		WebElement source = driver.findElement(By.id("draggable"));
 		WebElement target = driver.findElement(By.id("droppable"));
 		a.dragAndDrop(source, target).build().perform();
+		
+		//defaultContent method to come out from present content.
+		driver.switchTo().defaultContent();
+		driver.findElement(By.cssSelector("a[href='/resources/demos/droppable/accepted-elements.html']")).click();
+		
 	}
 
 }
